@@ -1,23 +1,23 @@
 import React, { useContext } from 'react';
-import Input from '../../Components/Input';
 import ContextDefault from '../../Context/Context';
 import "./Login.css"
 
-function Login(){
+function Login() {
   const { user, setUser } = useContext(ContextDefault);
   const handleChange = ({ target }) => {
-   setUser(target.value);
+    setUser(target.value);
   };
-  return(
+  return (
     <div className='Login'>
       <h1>Ola!</h1>
-      <Input
-      id="USERNAME"
-      name="login"
-      type="text"
-      placeholder="Digite seu Nome"
-      value={ user }
-      onChange={ handleChange }/>
+      <input
+        id="USERNAME"
+        name="login"
+        type="text"
+        placeholder="Digite seu Nome"
+        value={user}
+        autocomplete="off"
+        onChange={handleChange} />
     </div>
   )
 }

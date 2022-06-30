@@ -2,7 +2,7 @@
   display: grid;
   align-items: center;
   place-content: center;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 .Login input {
