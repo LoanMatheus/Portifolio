@@ -7,16 +7,21 @@ function Login(){
   const handleChange = ({ target }) => {
     data.setUser(target.value);
   };
+  console.log(data)
   return(
     <div>
       <label htmlFor="search-input">
-        <input
-          data-testid="name-filter"
-          id="search-input"
-          type="text"
-          placeholder="Pesquisar"
-          onChange={ handleChange }
-        />
+      <label htmlFor="EmailInput">
+          Email
+          <input
+            type="email"
+            name="EmailInput"
+            id="EmailInput"
+            value={ data }
+            onChange={ handleChange }
+            data-testid="email-input"
+          />
+        </label>
       </label>
       <Input
       type="text"
