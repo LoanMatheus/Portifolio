@@ -4,14 +4,22 @@ import ContextDefault from './Context';
 
 function ProviderDefault({ children }) {
   const [user, setUser] = useState("");
-  const [dataAPI2, setDataAPI2] = useState([]);
+  const [dataAPI, setDataAPI] = useState([]);
   const value = {
     user,
     setUser,
-    dataAPI2,
-    setDataAPI2,
+    dataAPI,
+    setDataAPI,
   };
 
+  useEffect(() => {
+    const fetchAPI = async () => {
+      const ENDPOINT = 'https://dog.ceo/api/breeds/image/random';
+      const { message } = await fetch(ENDPOINT).then((response) => response.json());
+      setDataAPI(message);
+    }
+    fetchAPI();
+  }, []);
   return (
     <ContextDefault.Provider value={value}>
       {children}
