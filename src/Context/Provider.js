@@ -4,10 +4,13 @@ import ContextDefault from './Context';
 
 function ProviderDefault({ children }) {
   const [user, setUser] = useState("");
+  const [disable, setDisable] = useState(true);
   const [dataAPI, setDataAPI] = useState([]);
   const value = {
     user,
     setUser,
+    disable,
+    setDisable,
     dataAPI,
     setDataAPI,
   };
@@ -20,6 +23,7 @@ function ProviderDefault({ children }) {
     }
     fetchAPI();
   }, []);
+
   return (
     <ContextDefault.Provider value={value}>
       {children}

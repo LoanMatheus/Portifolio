@@ -1,0 +1,9 @@
+.homeSection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.homeSection img {
+  max-width: 200px;
+}

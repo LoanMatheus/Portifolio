@@ -1,10 +1,17 @@
 .Login {
-  background: var(--bg-color);
   display: grid;
   align-items: center;
   place-content: center;
-  min-height: 90vh;
+  min-height: 100vh;
   font-family: "Source Sans Pro", sans-serif;
+}
+
+.Login .form {
+  text-align: center;
+}
+
+.Login input:focus-visible {
+  outline: none
 }
 
 .Login input {
@@ -16,21 +23,51 @@
   width: 100%;
   font-size: clamp(17px, 12vh, 19px);
   text-align: center;
-  color: hsl(0 0% 0% / 0.7);
-  font-weight: 400;
-  opacity: 0;
+  color: #008700;
+  font-weight: 700;
   margin: 8px 0;
+  opacity: 0;
   transform: translateY(3rem);
   animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
 }
 
+.Login input::placeholder {
+  color: #008700;
+}
+
+.Login button {
+  background: transparent;
+  color: #008700;
+  font-size: 18px;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+}
+
+.Login button:hover {
+  cursor: pointer;
+}
+
+.Login button:disabled:hover {
+  cursor: default;
+
+}
+
+.Login button:disabled {
+  background: transparent;
+  border: none;
+  color: #000;
+  user-select: none;
+}
+
 :root {
-  --bg-color: hsl(49 37% 94%);
+  --font-color: #008700;
   --typewriterSpeed: 2s;
   --typewriterCharacters: 4;
 }
 
-h1 {
+.Login h1 {
   text-align: center;
   font-size: clamp(1rem, 3vw + 1rem, 4rem);
   position: relative;
@@ -38,10 +75,11 @@ h1 {
   position: relative;
   width: max-content;
   margin: auto;
+  color: var(--font-color)
 }
 
-h1::before,
-h1::after {
+.Login h1::before,
+.Login h1::after {
   content: "";
   position: absolute;
   top: 0;
@@ -50,16 +88,16 @@ h1::after {
   left: 0;
 }
 
-h1::before {
-  background: var(--bg-color);
+.Login h1::before {
+  background: #000;
   animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
 }
 
-h1::after {
+.Login h1::after {
   width: 0.125em;
-  background: black;
+  background: var(--font-color);
   animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards,
-    blink 750ms steps(var(--typewriterCharacters)) infinite;
+    blink 1000ms infinite;
 }
 
 @keyframes typewriter {

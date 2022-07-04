@@ -1,23 +1,44 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ContextDefault from '../../Context/Context';
 import "./Login.css"
 
 function Login() {
-  const { user, setUser } = useContext(ContextDefault);
+  const history = useNavigate();
+  const { user, setUser, disable, setDisable } = useContext(ContextDefault);
   const handleChange = ({ target }) => {
     setUser(target.value);
   };
+
+  const handleSubmit = () => {
+    history('/home');
+  };
+
+  useEffect(() => {
+    const validate = (user.length > 2)
+    validate ? setDisable(false) : setDisable(true);
+  }, [user, setDisable])
+
   return (
     <div className='Login'>
-      <h1>Ola!</h1>
-      <input
-        id="USERNAME"
-        name="login"
-        type="text"
-        placeholder="Digite seu Nome"
-        value={user}
-        autocomplete="off"
-        onChange={handleChange} />
+      <h1>Olá!</h1>
+      <div className='form'>
+        <input
+          id="USERNAME"
+          name="login"
+          type="text"
+          placeholder="Como posso te chamar?"
+          autoComplete="off"
+          value={user}
+          onChange={handleChange}
+        />
+        <button
+          disabled={disable}
+          onClick={handleSubmit}
+        >
+          Entrar
+        </button>
+      </div>
     </div>
   )
 }
