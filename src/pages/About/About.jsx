@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import ContextDefault from '../../Context/Context';
 import Header from '../../Components/Header/Header';
 import AOS from 'aos';
