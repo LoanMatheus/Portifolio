@@ -1,0 +1,69 @@
+.homeSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 47px 0px;
+  letter-spacing: 2px;
+}
+
+.homeSection .foto img {
+  max-width: 250px;
+  margin: 0 40px;
+  border: 2px solid;
+  border-radius: 18px;
+}
+
+
+.headline {
+  position: relative;
+}
+
+.backHeadline {
+  background: url(../../img/code2.jpg);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  filter: brightness(0.7) blur(2px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.homeBox {
+  background: #8ac17b2e;
+  color: #d1d7c8;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: -3px 2px 7px 0px #5dff2c69;
+  text-shadow: -2px 1px 0px black;
+  margin: 0px 40px;
+}
+
+.headline .foto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeSection .linguagens {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.homeSection .linguagens .cardLinguagens {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.linguagens h5 {
+  margin: 0;
+}
+
+.homeSection .linguagens img {
+  max-width: 48px;
+  max-height: 48px;
+  margin: 12px 24px;
+}
